@@ -8,8 +8,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Inicializar la aplicación Flask
 app = Flask(__name__)
-CORS(app)  # Permite que tu web en GitHub hable con este servidor
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 # --- CONFIGURACIÓN ---
 # Ajusta esto al largo que usaste en tu entrenamiento en Colab
 MAX_SEQUENCE_LEN = 50  # Ejemplo: si usaste input_length=50
